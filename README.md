@@ -1,24 +1,62 @@
-# README
+# Kittens API 🐱
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Kitten application to set up Rails to render data instead of HTML from The Odin Project. 
+[Link to lesson](https://www.theodinproject.com/lessons/ruby-on-rails-kittens-api#assignment-2)
 
-Things you may want to cover:
+## Table of Content
 
-* Ruby version
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
 
-* System dependencies
+## Features
 
-* Configuration
+- RESTful API: Able to request index and show actions of Kitten as json.
+- Functional html interface that allows create, edit, and delete actions.
 
-* Database creation
+## Installation
 
-* Database initialization
+clone repository
+```
+git clone https://github.com/MclPio/odin-kittens.git
+```
 
-* How to run the test suite
+install gems
+```
+bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+migrate data
+```
+rails db:migrate
+```
 
-* Deployment instructions
+## Usage
 
-* ...
+start server
+```
+rails s
+```
+
+open in browser
+```
+localhost:3000
+```
+
+### API interface
+Before you continue, make sure you create a new kitten through the html page
+```
+require 'rest-client'
+```
+
+To get index json response
+```
+json_response = RestClient.get("http://localhost:3000/kittens", accept: :json)
+puts json_response.body
+```
+
+To get show json response
+```
+show_json_response = RestClient.get("http://localhost:3000/kittens/1", accept: :json)
+puts show_json_response.body
+```

@@ -18,7 +18,7 @@ Kitten application to set up Rails to render data instead of HTML from The Odin 
 
 clone repository
 ```
-git clone https://github.com/MclPio/odin-kittens.git
+git clone git@github.com:odilsoncode/odin-kittens.git
 ```
 
 install gems
